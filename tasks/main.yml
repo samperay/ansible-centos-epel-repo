@@ -1,2 +1,21 @@
 ---
-# tasks file for ansible-centos-epel-repo
+- name: verify epel repo exists
+  stat:
+    path: "{{ epel_file_path }}"
+    register: epel_stdout
+
+- name: install epel repo
+  yum:
+    name: "{{ epel_repo_url_latest }}"
+    state: present
+  register: install_repo_stdout
+  when: not epel_stdout.stat.exists
+
+- name: import gpg key for epel
+  rpm_key:
+    key: "{{ epel_repo_key }}"
+    state: present
+  when: not epel_stdout.stat.exists
+
+    
+    

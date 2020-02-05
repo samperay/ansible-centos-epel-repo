@@ -2,4 +2,4 @@
 - name: Converge
   hosts: all
   roles:
-    - role: ansible-centos-epel-repo
+    - role: samperay.ansible-centos-epel-repo

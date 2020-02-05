@@ -1,41 +1,40 @@
+# ansible-centos-epel-repo
+
 Role Name
 =========
 
-A brief description of the role goes here.
+EPEL Repository for CentOS
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should
-be mentioned here. For instance, if the role uses the EC2 module, it may be a
-good idea to mention in this section that the boto package is required.
+Role runs for CentOS and RedHat
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including
-any variables that are in defaults/main.yml, vars/main.yml, and any variables
-that can/should be set via parameters to the role. Any variables that are read
-from other roles and/or the global scope (ie. hostvars, group vars, etc.) should
-be mentioned here as well.
+Available variables are listed below, along with default values
+
+```
+epel_repo_url_latest: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
+epel_repo_key: "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+epel_file_path: /etc/yum.repos.d/epel.repo
+```
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in
-regards to parameters that may need to be set for other roles, or variables that
-are used from other roles.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables
-passed in as parameters) is always nice for users too:
+```
 
-    - hosts: servers
-      roles:
-         - { role: ansible-centos-epel-repo, x: 42 }
-
+ - hosts: servers
+   roles:
+    - samperay.ansible-centos-epel-repo
+         
+```
 License
 -------
 
@@ -43,7 +42,4 @@ BSD
 
 Author Information
 ------------------
-
-An optional section for the role authors to include contact information, or a
-website (HTML is not allowed).
-# ansible-centos-epel-repo
+Created on 05/Feb/2019 Wednesday 14:32 IST by sunlnx@gmail.com
