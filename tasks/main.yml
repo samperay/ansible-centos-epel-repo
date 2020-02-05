@@ -16,6 +16,3 @@
     key: "{{ epel_repo_key }}"
     state: present
   when: not epel_stdout.stat.exists
-
-    
-    

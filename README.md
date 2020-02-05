@@ -23,7 +23,7 @@ epel_file_path: /etc/yum.repos.d/epel.repo
 
 Dependencies
 ------------
-
+None
 
 Example Playbook
 ----------------
