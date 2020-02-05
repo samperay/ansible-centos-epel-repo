@@ -2,7 +2,7 @@
 - name: verify epel repo exists
   stat:
     path: "{{ epel_file_path }}"
-    register: epel_stdout
+  register: epel_stdout
 
 - name: install epel repo
   yum:
